@@ -39,7 +39,7 @@ function cln_child_theme_enqueue_scripts() {
     // Enqueue the child theme's stylesheet
     wp_enqueue_style(
         'child-style',
-        get_stylesheet_directory_uri() . '/assets/css/style.css', // Added leading slash
+        get_stylesheet_directory_uri() . '/assets/css/style.min.css', // Added leading slash
         array(),
         wp_get_theme()->get( 'Version' )
     );
@@ -47,7 +47,7 @@ function cln_child_theme_enqueue_scripts() {
     // Enqueue the child theme's JavaScript file
     wp_enqueue_script(
         'child-custom-script',
-        get_stylesheet_directory_uri() . '/assets/js/script.js', // Added leading slash
+        get_stylesheet_directory_uri() . '/assets/js/script.min.js', // Added leading slash
         array( 'jquery' ),
         wp_get_theme()->get( 'Version' ),
         true
