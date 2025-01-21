@@ -1,0 +1,6 @@
+# Node.js
+node_modules/
+
+# Compiled assets (optional, if you don't want to commit the compiled files)
+assets/css/*.min.css
+assets/js/*.min.js
