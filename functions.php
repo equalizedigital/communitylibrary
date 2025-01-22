@@ -41,8 +41,7 @@ function cln_child_theme_enqueue_scripts() {
         'cln-font-awesome',
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css',
         array(),
-        rand(1000, 9999),
-        //wp_get_theme()->get( 'Version' ),
+        wp_get_theme()->get( 'Version' ),
     );
 
     // Enqueue the child theme's stylesheet.
@@ -50,8 +49,7 @@ function cln_child_theme_enqueue_scripts() {
         'child-style',
         get_stylesheet_directory_uri() . '/assets/css/style.min.css',
         array(),
-        rand(1000, 9999),
-        //wp_get_theme()->get( 'Version' )
+        wp_get_theme()->get( 'Version' )
     );
 
     // Enqueue the child theme's JavaScript file.
@@ -59,8 +57,7 @@ function cln_child_theme_enqueue_scripts() {
         'child-custom-script',
         get_stylesheet_directory_uri() . '/assets/js/script.min.js',
         array( 'jquery' ),
-        rand(1000, 9999),
-        //wp_get_theme()->get( 'Version' ),
+        wp_get_theme()->get( 'Version' ),
         true
     );
 }
