@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    
 	// Getting main menu elements
 	const menuContainer = document.querySelector('.menu-container');
 	const menuToggle = menuContainer.querySelector('.menu-button');
@@ -75,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			// Update the ARIA expanded state of the dropdown
 			const isExpanded =
-				this.getAttribute('aria-expanded') === 'false'
+				this.getAttribute('aria-expanded') === 'true'
 					? 'true'
 					: 'false';
 
