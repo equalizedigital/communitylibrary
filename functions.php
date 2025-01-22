@@ -133,7 +133,7 @@ function cln_add_fusion_megamenu_icon($item_output, $item, $depth, $args) {
     if (!empty($icon)) {
         // Extract the <a> tag from the $item_output
         if (preg_match('/(<a.*?>)(.*?)(<\/a>)/i', $item_output, $matches)) {
-            $icon_html = '<span class="fusion-megamenu-icon" aria-hidden="true"><i class="' . esc_attr($icon) . '"></i></span>';
+            $icon_html = '<span class="fusion-megamenu-icon" aria-hidden="true"><i class="' . esc_attr($icon) . '" aria-hidden="true"></i></span>';
             // Reconstruct the <a> tag with the icon inside
             $item_output = $matches[1] . $icon_html . $matches[2] . $matches[3];
         }
