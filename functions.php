@@ -95,21 +95,6 @@ if ( ! function_exists( 'avada_main_menu' ) ) {
 	}
 }
 
-//add_action('wp_nav_menu', 'debug_menu_data', 10, 2);
-
-function debug_menu_data($nav_menu, $args) {
-    // Get all menu items for the current menu
-    $menu_items = wp_get_nav_menu_items($args->menu);
-
-    if ($menu_items) {
-        echo '<pre>';
-        print_r($menu_items); // Output raw menu data
-        echo '</pre>';
-    }
-
-    return $nav_menu; // Return the menu as it is
-}
-
 /**
  * Adds the Fusion Mega Menu Icon inside the <a> tag of menu items for the main_navigation theme location.
  *
