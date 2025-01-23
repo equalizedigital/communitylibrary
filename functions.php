@@ -111,7 +111,7 @@ function debug_menu_data($nav_menu, $args) {
 }
 
 /**
- * Adds the Fusion Mega Menu Icon inside the <a> tag of menu items.
+ * Adds the Fusion Mega Menu Icon inside the <a> tag of menu items for the main_navigation theme location.
  *
  * This function retrieves the Fusion Mega Menu Icon metadata for a menu item
  * and prepends the corresponding icon HTML inside the `<a>` tag.
@@ -124,15 +124,18 @@ function debug_menu_data($nav_menu, $args) {
  * @return string The modified menu item output with the icon HTML prepended inside the <a> tag.
  */
 function cln_add_fusion_megamenu_icon($item_output, $item, $depth, $args) {
-    // Retrieve the Fusion Mega Menu Icon metadata
-    $icon = isset($item->fusion_megamenu_icon) ? $item->fusion_megamenu_icon : null;
+    // Only apply to the main_navigation theme location
+    if (isset($args->theme_location) && $args->theme_location === 'main_navigation') {
+        // Retrieve the Fusion Mega Menu Icon metadata
+        $icon = isset($item->fusion_megamenu_icon) ? $item->fusion_megamenu_icon : null;
 
-    if (!empty($icon)) {
-        // Extract the <a> tag from the $item_output
-        if (preg_match('/(<a.*?>)(.*?)(<\/a>)/i', $item_output, $matches)) {
-            $icon_html = '<span class="fusion-megamenu-icon" aria-hidden="true"><i class="' . esc_attr($icon) . '" aria-hidden="true"></i></span>';
-            // Reconstruct the <a> tag with the icon inside
-            $item_output = $matches[1] . $icon_html . $matches[2] . $matches[3];
+        if (!empty($icon)) {
+            // Extract the <a> tag from the $item_output
+            if (preg_match('/(<a.*?>)(.*?)(<\/a>)/i', $item_output, $matches)) {
+                $icon_html = '<span class="fusion-megamenu-icon" aria-hidden="true"><i class="' . esc_attr($icon) . '" aria-hidden="true"></i></span>';
+                // Reconstruct the <a> tag with the icon inside
+                $item_output = $matches[1] . $icon_html . $matches[2] . $matches[3];
+            }
         }
     }
 
